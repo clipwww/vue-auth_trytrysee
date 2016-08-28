@@ -1,0 +1,54 @@
+<template>
+
+	<div class='col-sm-4 col-sm-offset-4'>
+		<h2>註冊</h2>
+		<p>建立一組新帳號吧</p>
+		<div class='alert alert-danger' v-if='error'>{{ error }}</div>
+
+		<div class="form-horizontal">
+			<div class='form-group'>
+				<label for="username" class="col-sm-2 control-label">帳號</label>
+				<div class="col-sm-10">
+					<input id="username" name="username" type='text' class='form-control' placeholder="請輸入使用者帳號" v-model='credentials.username'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label for="password" class="col-sm-2 control-label">密碼</label>
+				<div class="col-sm-10">
+					<input id="password" name="password" type='password' class='form-control' placeholder="請輸入使用者密碼" v-model='credentials.password'>
+				</div>
+			</div>
+			<div class='form-group'>
+				<div class="col-sm-offset-2 col-sm-10">
+					<button class='btn btn-primary' v-on:click='submit'>註冊並存取</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</template>
+
+<script>
+	import auth from '../auth';
+
+	export default{
+		data(){
+			return{
+				credentials:{
+					username: '',
+					password: ''
+				},
+				error: ''
+			}
+		},
+		methods:{
+			submit(){
+				// var credentials = {
+				// 	username: this.credentials.username,
+				// 	password: this.credentials.password
+				// }
+				auth.signup(this, this.credentials, 'secretquote')
+			}
+		}
+	}
+</script>
