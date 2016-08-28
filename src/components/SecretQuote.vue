@@ -1,5 +1,5 @@
 <template>
-	<div class='col-sm-6 col-sm-offset-3'>
+	<div class='col-sm-12'>
 		<h1>取得需要授權的名言</h1>
 		<button class='btn btn-warning' v-on:click='getQuote()'>取得名言</button>
 		<div class="quote-area" v-if="quote">
