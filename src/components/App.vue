@@ -8,7 +8,7 @@
 					<li><a v-link="'login'" v-if="!user.authenticated">Login</a></li>
 					<li><a v-link="'signup'" v-if="!user.authenticated">Signup</a></li>
 					<li><a v-link="'secretquote'" v-if="user.authenticated">Secret Quote</a></li>
-					<li><a v-link="'loging'" v-if="user.authenticated" v-on:click="logout">Logout</a></li>
+					<li><a v-link="'login'" v-if="user.authenticated" v-on:click="logout">Logout</a></li>
 				</ul>
 			</div>
 		</nav>
